@@ -21,7 +21,7 @@
     --accent: #7ef2b0;
     --accent-dim: #4fb388;
     --accent-soft: rgba(126, 242, 176, 0.1);
-    --max-w: 880px;
+    --max-w: 1120px;
   }
 
   @media (prefers-color-scheme: light) {
@@ -368,11 +368,10 @@
   }
   .tweet-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 16px;
     align-items: start;
   }
-  @media (min-width: 700px) { .tweet-grid { grid-template-columns: repeat(2, 1fr); } }
   .tweet-grid .twitter-tweet { margin: 0 !important; width: 100% !important; }
 
   /* CONTACT */
@@ -422,7 +421,6 @@
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -536,6 +534,24 @@
         <li><strong>Social media:</strong> Owned a 20-posts/month editorial pipeline across X and LinkedIn — <span class="metric">40% follower growth</span>, 50K+ monthly impressions, 2% average engagement rate.</li>
         <li><strong>Campaign execution:</strong> Ran 34 global &amp; regional GTM campaigns on a $100K monthly budget at a $4.23 CPM — <span class="metric">50M+ impressions</span>, 5M+ registrations, 3.4M activated users, 100M+ transactions.</li>
       </ul>
+
+      <div class="subhead">Campaign Proof</div>
+      <div class="tweet-group">
+        <div class="tweet-group-title">UniversalX — KOL Campaign</div>
+        <div class="tweet-grid">
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/LeBause4200/status/2003730361839489344"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/mimounxzitoen/status/2008300583669674356"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/trishhxy/status/2044140758744387960"></a></blockquote>
+        </div>
+      </div>
+      <div class="tweet-group">
+        <div class="tweet-group-title">Particle Network — KOL Campaign</div>
+        <div class="tweet-grid">
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/DamiDefi/status/1955233659201765739"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/stacy_muur/status/1952653053372600747"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/farmercist_eth/status/1904621485697663462"></a></blockquote>
+        </div>
+      </div>
     </div>
 
     <!-- FOMO Ventures -->
@@ -550,6 +566,24 @@
         <li><strong>Research content:</strong> Produced 20 research-led X posts/month across two dedicated accounts — averaging <span class="metric">100K monthly impressions</span> and 40% follower growth. Notable coverage: Arcium, Grvt, Propr, WLFI, Camp Network, MMT Finance, Yala, Nillion.</li>
         <li><strong>KOL campaigns:</strong> Led and executed <span class="metric">30+ X KOL campaigns</span> for clients including WLFI, KOR Protocol, and Predict.fun — ideation through post-campaign analytics — 500K+ impressions, 50K+ registered users, 200K+ in trading volume.</li>
       </ul>
+
+      <div class="subhead">Campaign Proof</div>
+      <div class="tweet-group">
+        <div class="tweet-group-title">Research Threads</div>
+        <div class="tweet-grid">
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/FOMO_v/status/1854184805140664633"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Mikesi30/status/1934599724314640505"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Mikesi30/status/2055248992473169937"></a></blockquote>
+        </div>
+      </div>
+      <div class="tweet-group">
+        <div class="tweet-group-title">KOL Campaign</div>
+        <div class="tweet-grid">
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Alaouicapital/status/2074890185297305850"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Hydraze420/status/2065439286879482264"></a></blockquote>
+          <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/WhaleFactor/status/2079974225608323081"></a></blockquote>
+        </div>
+      </div>
     </div>
 
     <!-- BoomFi -->
@@ -565,56 +599,8 @@
         <li>Produced 3 long-form articles and weekly market updates, growing organic traffic by <span class="metric">30%</span> and ranking 3 articles in Google's top 10 results for target payment keywords.</li>
         <li>Ran A/B tests and a LinkedIn ad campaign — 2K+ clicks, 20 qualified leads.</li>
       </ul>
-    </div>
 
-    <!-- NodeReal -->
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">Research &amp; Content Lead</div>
-        <div class="role-date">Aug 2022 — Nov 2023</div>
-      </div>
-      <div class="role-org">NodeReal</div>
-      <div class="role-desc">Blockchain infrastructure provider</div>
-      <ul class="bullets">
-        <li>Owned end-to-end monthly content production — blogs, newsletters, X threads, ecosystem updates — from founder interviews through publication and distribution.</li>
-        <li>Interviewed 20+ project founders, translating complex infrastructure topics into educational articles.</li>
-        <li>Maintained a <span class="metric">100% on-time publication rate</span> while coordinating across product, ecosystem, and technical stakeholders.</li>
-      </ul>
-    </div>
-
-    <!-- W1TTY -->
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">Head of Research</div>
-        <div class="role-date">Sep 2020 — Aug 2022</div>
-      </div>
-      <div class="role-org">W1TTY</div>
-      <div class="role-desc">Pan-European digital bank · founding team, promoted to R&amp;D Lead as the bank scaled to 100,000+ users across six markets</div>
-      <ul class="bullets">
-        <li>Managed a distributed team of five research analysts, turning market, competitor, and consumer data into weekly decision-ready insights for senior leadership.</li>
-        <li>Shaped GTM and product strategy through Gen Z sentiment analysis, user research, and customer journey mapping.</li>
-        <li>Ran end-to-end influencer campaigns and built targeted landscapes of VCs, investment banks, and family offices to support acquisition and fundraising.</li>
-        <li>Evaluated technology partners and blockchain projects across product fit, business model, tokenomics, and market sentiment.</li>
-      </ul>
-    </div>
-
-    <!-- Freelance -->
-    <div class="role">
-      <div class="role-head">
-        <div class="role-title">Freelance Contributor</div>
-      </div>
-      <ul class="bullets">
-        <li>Bylines on opBNB (Layer 2 landscape analysis) and Alterscope (DeFi security infrastructure); fintech trend pieces for Connecting the Dots in Fintech.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- WORK SAMPLES -->
-  <section id="work">
-    <div class="section-head"><span class="section-num mono">03</span><h2>Writing &amp; Work Samples</h2></div>
-
-    <div class="work-group">
-      <div class="work-group-title">BoomFi — Payments &amp; Stablecoins</div>
+      <div class="subhead">Articles</div>
       <div class="work-grid">
         <a class="work-card" href="https://www.linkedin.com/pulse/crypto-payments-us-policy-what-does-trumps-second-presidency-mean-jf2xe" target="_blank" rel="noopener">
           <div class="work-card-title">Crypto Payments and U.S. Policy</div>
@@ -639,8 +625,21 @@
       </div>
     </div>
 
-    <div class="work-group">
-      <div class="work-group-title">NodeReal — Blockchain Infrastructure</div>
+    <!-- NodeReal -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Research &amp; Content Lead</div>
+        <div class="role-date">Aug 2022 — Nov 2023</div>
+      </div>
+      <div class="role-org">NodeReal</div>
+      <div class="role-desc">Blockchain infrastructure provider</div>
+      <ul class="bullets">
+        <li>Owned end-to-end monthly content production — blogs, newsletters, X threads, ecosystem updates — from founder interviews through publication and distribution.</li>
+        <li>Interviewed 20+ project founders, translating complex infrastructure topics into educational articles.</li>
+        <li>Maintained a <span class="metric">100% on-time publication rate</span> while coordinating across product, ecosystem, and technical stakeholders.</li>
+      </ul>
+
+      <div class="subhead">Articles</div>
       <div class="work-grid">
         <a class="work-card" href="https://nodereal.io/blog/en/how-layer-2-elevate-blockchain-games/" target="_blank" rel="noopener">
           <div class="work-card-title">Layer 2 Solutions for Web3 Gaming</div>
@@ -660,8 +659,22 @@
       </div>
     </div>
 
-    <div class="work-group">
-      <div class="work-group-title">W1TTY — Fintech Research</div>
+    <!-- W1TTY -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Head of Research</div>
+        <div class="role-date">Sep 2020 — Aug 2022</div>
+      </div>
+      <div class="role-org">W1TTY</div>
+      <div class="role-desc">Pan-European digital bank · founding team, promoted to R&amp;D Lead as the bank scaled to 100,000+ users across six markets</div>
+      <ul class="bullets">
+        <li>Managed a distributed team of five research analysts, turning market, competitor, and consumer data into weekly decision-ready insights for senior leadership.</li>
+        <li>Shaped GTM and product strategy through Gen Z sentiment analysis, user research, and customer journey mapping.</li>
+        <li>Ran end-to-end influencer campaigns and built targeted landscapes of VCs, investment banks, and family offices to support acquisition and fundraising.</li>
+        <li>Evaluated technology partners and blockchain projects across product fit, business model, tokenomics, and market sentiment.</li>
+      </ul>
+
+      <div class="subhead">Work Samples</div>
       <div class="work-grid">
         <a class="work-card" href="https://www.canva.com/design/DAGgnEM-tgM/rKGPXh-G8kwRMU__xzmQNA/view" target="_blank" rel="noopener">
           <div class="work-card-title">White Paper — Open Banking</div>
@@ -681,52 +694,21 @@
         </a>
       </div>
     </div>
-  </section>
 
-  <!-- CAMPAIGN PROOF -->
-  <section id="proof">
-    <div class="section-head"><span class="section-num mono">04</span><h2>Campaign Proof</h2></div>
-
-    <div class="tweet-group">
-      <div class="tweet-group-title">UniversalX — KOL Campaign</div>
-      <div class="tweet-grid">
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/LeBause4200/status/2003730361839489344"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/mimounxzitoen/status/2008300583669674356"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/trishhxy/status/2044140758744387960"></a></blockquote>
+    <!-- Freelance -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Freelance Contributor</div>
       </div>
-    </div>
-
-    <div class="tweet-group">
-      <div class="tweet-group-title">Particle Network — KOL Campaign</div>
-      <div class="tweet-grid">
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/DamiDefi/status/1955233659201765739"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/stacy_muur/status/1952653053372600747"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/farmercist_eth/status/1904621485697663462"></a></blockquote>
-      </div>
-    </div>
-
-    <div class="tweet-group">
-      <div class="tweet-group-title">FOMO Ventures — Research Threads</div>
-      <div class="tweet-grid">
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/FOMO_v/status/1854184805140664633"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Mikesi30/status/1934599724314640505"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Mikesi30/status/2055248992473169937"></a></blockquote>
-      </div>
-    </div>
-
-    <div class="tweet-group">
-      <div class="tweet-group-title">FOMO Ventures — KOL Campaign</div>
-      <div class="tweet-grid">
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Alaouicapital/status/2074890185297305850"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Hydraze420/status/2065439286879482264"></a></blockquote>
-        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/WhaleFactor/status/2079974225608323081"></a></blockquote>
-      </div>
+      <ul class="bullets">
+        <li>Bylines on opBNB (Layer 2 landscape analysis) and Alterscope (DeFi security infrastructure); fintech trend pieces for Connecting the Dots in Fintech.</li>
+      </ul>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-head"><span class="section-num mono">05</span><h2>Let's connect</h2></div>
+    <div class="section-head"><span class="section-num mono">03</span><h2>Let's connect</h2></div>
     <div class="contact-grid">
       <a class="contact-card" href="https://calendly.com/vuongluan-ng25/catch-up-with-alain" target="_blank" rel="noopener">
         <div class="contact-icon">📅</div>
