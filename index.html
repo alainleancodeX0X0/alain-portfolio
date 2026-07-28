@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alain Nguyen — Growth Marketer, Web3 / Fintech / Crypto</title>
+<meta name="description" content="Alain Nguyen — Growth Marketer specializing in KOLs, BD, GTM and Content across Fintech, Web3, and Crypto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0e13;
+    --bg-alt: #10141c;
+    --surface: #151a24;
+    --surface-hover: #1b2230;
+    --border: #232a38;
+    --text: #eef1f6;
+    --text-dim: #9aa4b6;
+    --text-dimmer: #6b7688;
+    --accent: #7ef2b0;
+    --accent-dim: #4fb388;
+    --accent-soft: rgba(126, 242, 176, 0.1);
+    --max-w: 880px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fbfcfd;
+      --bg-alt: #f3f5f7;
+      --surface: #ffffff;
+      --surface-hover: #f0f2f5;
+      --border: #e4e7ec;
+      --text: #14181f;
+      --text-dim: #566072;
+      --text-dimmer: #8891a0;
+      --accent: #0f9d63;
+      --accent-dim: #0c7d4f;
+      --accent-soft: rgba(15, 157, 99, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* NAV */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11, 14, 19, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  @media (prefers-color-scheme: light) {
+    header.nav { background: rgba(251, 252, 253, 0.85); }
+  }
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links { display: none; }
+  @media (min-width: 640px) { .nav-links { display: flex; } }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 48px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-dim);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .tagline {
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--text-dim);
+    max-width: 640px;
+    margin-bottom: 28px;
+  }
+  .tagline strong { color: var(--text); font-weight: 600; }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    transition: all 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #06120c;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+  }
+  .btn-ghost:hover { background: var(--surface-hover); border-color: var(--text-dimmer); }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  @media (min-width: 640px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  .stat {
+    background: var(--surface);
+    padding: 20px 16px;
+  }
+  .stat-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* ABOUT */
+  .about-lede {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 680px;
+    margin-bottom: 32px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  @media (min-width: 640px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
+  .pillar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .pillar-emoji { font-size: 20px; margin-bottom: 8px; display: block; }
+  .pillar-title { font-weight: 600; font-size: 14.5px; margin-bottom: 4px; }
+  .pillar-body { font-size: 13.5px; color: var(--text-dim); }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    font-size: 13px;
+    padding: 6px 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-dim);
+  }
+
+  /* EXPERIENCE */
+  .role {
+    margin-bottom: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .role:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .role-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .role-title { font-size: 17px; font-weight: 700; }
+  .role-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-dimmer);
+    white-space: nowrap;
+  }
+  .role-org { color: var(--accent-dim); font-size: 13.5px; margin-bottom: 4px; }
+  .role-desc { color: var(--text-dimmer); font-size: 13px; margin-bottom: 16px; font-style: italic; }
+
+  .subhead {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-dimmer);
+    margin: 18px 0 10px;
+  }
+  .subhead:first-of-type { margin-top: 0; }
+
+  ul.bullets { list-style: none; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 10px;
+    font-size: 14.5px;
+    color: var(--text-dim);
+  }
+  ul.bullets li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 13px;
+  }
+  ul.bullets li strong { color: var(--text); font-weight: 600; }
+  ul.bullets li .metric { color: var(--accent); font-weight: 600; }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .mini-tag {
+    font-size: 11.5px;
+    padding: 3px 9px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-dimmer);
+  }
+
+  /* WORK SAMPLES */
+  .work-group { margin-bottom: 28px; }
+  .work-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 640px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+  .work-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.15s ease;
+  }
+  .work-card:hover {
+    border-color: var(--accent-dim);
+    background: var(--surface-hover);
+  }
+  .work-card-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .work-card-desc {
+    font-size: 12.5px;
+    color: var(--text-dimmer);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .work-card-arrow {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 8px;
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* CAMPAIGN PROOF (tweet embeds) */
+  .tweet-group { margin-bottom: 28px; }
+  .tweet-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+  .tweet-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  @media (min-width: 700px) { .tweet-grid { grid-template-columns: repeat(2, 1fr); } }
+  .tweet-grid .twitter-tweet { margin: 0 !important; width: 100% !important; }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 640px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .contact-card:hover { border-color: var(--accent-dim); }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .contact-label { font-size: 12px; color: var(--text-dimmer); }
+  .contact-value { font-size: 14px; font-weight: 600; }
+
+  footer {
+    padding: 32px 0 48px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-dimmer);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">Alain Nguyen</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none; padding-top:56px;">
+    <div class="eyebrow">📍 Dubai, UAE · 🗓 6 years in Fintech, Web3 &amp; Crypto</div>
+    <h1>Alain Nguyen</h1>
+    <p class="tagline">Growth Marketer — <strong>KOLs, BD, GTM &amp; Content</strong> across Fintech, Web3, and Crypto. I turn products into mindshare, communities, and users.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://calendly.com/vuongluan-ng25/catch-up-with-alain" target="_blank" rel="noopener">Book a call →</a>
+      <a class="btn btn-ghost" href="mailto:vuongluan.ng25@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://x.com/Alain_XOXO" target="_blank" rel="noopener">X / Twitter</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/alainnguyeninweb3" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">KOL &amp; agency pipeline</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Markets activated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$20M+</div>
+        <div class="stat-label">Attributable trading volume</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Trading creators engaged</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head"><span class="section-num mono">01</span><h2>About</h2></div>
+    <p class="about-lede">
+      I'm a Growth Marketer who works end-to-end on GTM, KOLs, BD, product, events, and content — with a
+      200+ KOL and Tier-1 agency pipeline and 100+ trading creators engaged. I'm comfortable setting the
+      playbook, shipping the campaign, talking to users, and getting deep into product, while collaborating
+      closely with product and design.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-emoji">📈</span>
+        <div class="pillar-title">e/acc mindset</div>
+        <div class="pillar-body">I believe in shipping fast and building leverage — a builder's bias toward action over process for its own sake.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-emoji">🌊</span>
+        <div class="pillar-title">AI as leverage, not a slop machine</div>
+        <div class="pillar-body">I build AI agents (Claude Code, Grok, ChatGPT) with context-focused prompts to run a leaner, faster workflow.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-emoji">🔍</span>
+        <div class="pillar-title">Full KOL lifecycle</div>
+        <div class="pillar-body">Sourcing, contracting, negotiation, briefing, content, and performance analytics — start to finish.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-emoji">🧙</span>
+        <div class="pillar-title">Data-driven, not vibes-driven</div>
+        <div class="pillar-body">Campaign analytics and ROI ownership — from CPM to funded-user conversion.</div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <span class="skill-tag">Growth &amp; GTM Strategy</span>
+      <span class="skill-tag">KOL Sourcing, BD &amp; Negotiation</span>
+      <span class="skill-tag">Partner &amp; Affiliate Programs</span>
+      <span class="skill-tag">Content Strategy &amp; Copywriting</span>
+      <span class="skill-tag">Social &amp; Community (X, LinkedIn)</span>
+      <span class="skill-tag">Campaign Execution</span>
+      <span class="skill-tag">Market Research &amp; Analytics</span>
+      <span class="skill-tag">User Research &amp; Product Collaboration</span>
+      <span class="skill-tag">AI-Augmented Workflows</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-head"><span class="section-num mono">02</span><h2>Experience</h2></div>
+
+    <!-- Particle Network -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Growth Manager</div>
+        <div class="role-date">Dec 2023 — Present</div>
+      </div>
+      <div class="role-org">Particle Network</div>
+      <div class="role-desc">Universal transaction layer for RWAs, stablecoins, and digital assets</div>
+
+      <div class="subhead">Product Growth Marketing — UniversalX</div>
+      <ul class="bullets">
+        <li><strong>KOL &amp; partnership growth:</strong> Built and managed a pipeline of <span class="metric">200+ KOLs and agencies</span>, including 100+ trading-focused creators, activating 20 partners across Thailand, Vietnam, Japan, and Turkey.</li>
+        <li><strong>Personal contribution:</strong> <span class="metric">600K+ campaign impressions</span>, 3,000+ funded users, <span class="metric">$20M+ in attributable trading volume</span>, and $150K+ in revenue.</li>
+        <li><strong>Product growth &amp; user research:</strong> Ran 30 user interviews/month, contributing to a <span class="metric">70% increase in onboarding completion</span> and a 40% improvement in first-trade conversion.</li>
+        <li><strong>Growth-to-product escalation:</strong> Handled 100+ user issues/month, with 80% resolved or incorporated into the product roadmap.</li>
+        <li><strong>Events:</strong> Planned and hosted activations at GM Vietnam, Solana APAC, and CONVICTION — 3,000+ signups, 240+ attendees, 20 qualified partnership leads, converting into 5 affiliated trading communities.</li>
+        <li><strong>Community building:</strong> Recruited and managed 50+ ambassadors and yappers across X, Binance Square, and CoinMarketCap — 400K+ impressions and 250+ attributable trader sign-ups over a 3-month campaign.</li>
+      </ul>
+
+      <div class="subhead">Marketing Management</div>
+      <ul class="bullets">
+        <li><strong>Social media:</strong> Owned a 20-posts/month editorial pipeline across X and LinkedIn — <span class="metric">40% follower growth</span>, 50K+ monthly impressions, 2% average engagement rate.</li>
+        <li><strong>Campaign execution:</strong> Ran 34 global &amp; regional GTM campaigns on a $100K monthly budget at a $4.23 CPM — <span class="metric">50M+ impressions</span>, 5M+ registrations, 3.4M activated users, 100M+ transactions.</li>
+      </ul>
+    </div>
+
+    <!-- FOMO Ventures -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Web3 Researcher &amp; KOL Manager</div>
+        <div class="role-date">Mar 2024 — Present</div>
+      </div>
+      <div class="role-org">FOMO Ventures</div>
+      <div class="role-desc">Web3 investment fund · concurrent with Particle Network</div>
+      <ul class="bullets">
+        <li><strong>Research content:</strong> Produced 20 research-led X posts/month across two dedicated accounts — averaging <span class="metric">100K monthly impressions</span> and 40% follower growth. Notable coverage: Arcium, Grvt, Propr, WLFI, Camp Network, MMT Finance, Yala, Nillion.</li>
+        <li><strong>KOL campaigns:</strong> Led and executed <span class="metric">30+ X KOL campaigns</span> for clients including WLFI, KOR Protocol, and Predict.fun — ideation through post-campaign analytics — 500K+ impressions, 50K+ registered users, 200K+ in trading volume.</li>
+      </ul>
+    </div>
+
+    <!-- BoomFi -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Content Strategist</div>
+        <div class="role-date">Oct 2024 — May 2025</div>
+      </div>
+      <div class="role-org">BoomFi</div>
+      <div class="role-desc">Crypto payment gateway · concurrent with Particle Network</div>
+      <ul class="bullets">
+        <li>Converted complex payments and policy developments into 5 thought-leadership articles on stablecoins, PayFi, and crypto payments — <span class="metric">10K+ organic page views</span>, 200 search clicks.</li>
+        <li>Produced 3 long-form articles and weekly market updates, growing organic traffic by <span class="metric">30%</span> and ranking 3 articles in Google's top 10 results for target payment keywords.</li>
+        <li>Ran A/B tests and a LinkedIn ad campaign — 2K+ clicks, 20 qualified leads.</li>
+      </ul>
+    </div>
+
+    <!-- NodeReal -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Research &amp; Content Lead</div>
+        <div class="role-date">Aug 2022 — Nov 2023</div>
+      </div>
+      <div class="role-org">NodeReal</div>
+      <div class="role-desc">Blockchain infrastructure provider</div>
+      <ul class="bullets">
+        <li>Owned end-to-end monthly content production — blogs, newsletters, X threads, ecosystem updates — from founder interviews through publication and distribution.</li>
+        <li>Interviewed 20+ project founders, translating complex infrastructure topics into educational articles.</li>
+        <li>Maintained a <span class="metric">100% on-time publication rate</span> while coordinating across product, ecosystem, and technical stakeholders.</li>
+      </ul>
+    </div>
+
+    <!-- W1TTY -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Head of Research</div>
+        <div class="role-date">Sep 2020 — Aug 2022</div>
+      </div>
+      <div class="role-org">W1TTY</div>
+      <div class="role-desc">Pan-European digital bank · founding team, promoted to R&amp;D Lead as the bank scaled to 100,000+ users across six markets</div>
+      <ul class="bullets">
+        <li>Managed a distributed team of five research analysts, turning market, competitor, and consumer data into weekly decision-ready insights for senior leadership.</li>
+        <li>Shaped GTM and product strategy through Gen Z sentiment analysis, user research, and customer journey mapping.</li>
+        <li>Ran end-to-end influencer campaigns and built targeted landscapes of VCs, investment banks, and family offices to support acquisition and fundraising.</li>
+        <li>Evaluated technology partners and blockchain projects across product fit, business model, tokenomics, and market sentiment.</li>
+      </ul>
+    </div>
+
+    <!-- Freelance -->
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">Freelance Contributor</div>
+      </div>
+      <ul class="bullets">
+        <li>Bylines on opBNB (Layer 2 landscape analysis) and Alterscope (DeFi security infrastructure); fintech trend pieces for Connecting the Dots in Fintech.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WORK SAMPLES -->
+  <section id="work">
+    <div class="section-head"><span class="section-num mono">03</span><h2>Writing &amp; Work Samples</h2></div>
+
+    <div class="work-group">
+      <div class="work-group-title">BoomFi — Payments &amp; Stablecoins</div>
+      <div class="work-grid">
+        <a class="work-card" href="https://www.linkedin.com/pulse/crypto-payments-us-policy-what-does-trumps-second-presidency-mean-jf2xe" target="_blank" rel="noopener">
+          <div class="work-card-title">Crypto Payments and U.S. Policy</div>
+          <div class="work-card-desc">What Trump's second presidency means for the industry's next chapter.</div>
+          <span class="work-card-arrow">LinkedIn Pulse →</span>
+        </a>
+        <a class="work-card" href="https://blog.boomfi.xyz/stablecoin-revolution-the-biggest-catalyst-for-crypto-payment-system/" target="_blank" rel="noopener">
+          <div class="work-card-title">Stablecoins: The Catalyst for Crypto Payment Adoption</div>
+          <div class="work-card-desc">On Stripe's $1.1B Bridge acquisition and the stablecoin payments opportunity.</div>
+          <span class="work-card-arrow">BoomFi Blog →</span>
+        </a>
+        <a class="work-card" href="https://blog.boomfi.xyz/redefining-competitive-advantage-why-prop-firms-should-leverage-crypto-payments/" target="_blank" rel="noopener">
+          <div class="work-card-title">Why Prop Trading Firms Should Leverage Crypto Payments</div>
+          <div class="work-card-desc">Faster transactions, cost savings, and global reach with crypto rails.</div>
+          <span class="work-card-arrow">BoomFi Blog →</span>
+        </a>
+        <a class="work-card" href="https://www.linkedin.com/pulse/future-payments-why-payment-service-providers-need-embrace-crypto-ohxyf" target="_blank" rel="noopener">
+          <div class="work-card-title">The Future of Payments</div>
+          <div class="work-card-desc">Why payment service providers need to embrace crypto rails.</div>
+          <span class="work-card-arrow">LinkedIn Pulse →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="work-group">
+      <div class="work-group-title">NodeReal — Blockchain Infrastructure</div>
+      <div class="work-grid">
+        <a class="work-card" href="https://nodereal.io/blog/en/how-layer-2-elevate-blockchain-games/" target="_blank" rel="noopener">
+          <div class="work-card-title">Layer 2 Solutions for Web3 Gaming</div>
+          <div class="work-card-desc">How L2s address scalability, cost, and UX challenges in blockchain games.</div>
+          <span class="work-card-arrow">NodeReal Blog →</span>
+        </a>
+        <a class="work-card" href="https://nodereal.io/blog/en/certik-the-pursuit-of-securing-the-web3-world/" target="_blank" rel="noopener">
+          <div class="work-card-title">CertiK: Securing the Web3 World</div>
+          <div class="work-card-desc">An in-depth look at CertiK's blockchain security solutions.</div>
+          <span class="work-card-arrow">NodeReal Blog →</span>
+        </a>
+        <a class="work-card" href="https://nodereal.io/blog/en/nodereal-monthly-updates-may-2023/" target="_blank" rel="noopener">
+          <div class="work-card-title">NodeReal Monthly Updates — May 2023</div>
+          <div class="work-card-desc">Product, partnership, and community update newsletter.</div>
+          <span class="work-card-arrow">NodeReal Blog →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="work-group">
+      <div class="work-group-title">W1TTY — Fintech Research</div>
+      <div class="work-grid">
+        <a class="work-card" href="https://www.canva.com/design/DAGgnEM-tgM/rKGPXh-G8kwRMU__xzmQNA/view" target="_blank" rel="noopener">
+          <div class="work-card-title">White Paper — Open Banking</div>
+          <span class="work-card-arrow">View on Canva →</span>
+        </a>
+        <a class="work-card" href="https://www.canva.com/design/DAGgnLJOp3w/JyGGYDW3iX1pZ6cR4ZDk1Q/view" target="_blank" rel="noopener">
+          <div class="work-card-title">Junior Accounts Research</div>
+          <span class="work-card-arrow">View on Canva →</span>
+        </a>
+        <a class="work-card" href="https://www.canva.com/design/DAGgnNsXBfI/0OAONmunKIzinF3pr0K1rA/view" target="_blank" rel="noopener">
+          <div class="work-card-title">Fintech Dossier</div>
+          <span class="work-card-arrow">View on Canva →</span>
+        </a>
+        <a class="work-card" href="https://www.canva.com/design/DAGgnAgGNpM/gs59k6pp-Aa18SjQV3O9_Q/view" target="_blank" rel="noopener">
+          <div class="work-card-title">Market Launch Analysis</div>
+          <span class="work-card-arrow">View on Canva →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN PROOF -->
+  <section id="proof">
+    <div class="section-head"><span class="section-num mono">04</span><h2>Campaign Proof</h2></div>
+
+    <div class="tweet-group">
+      <div class="tweet-group-title">UniversalX — KOL Campaign</div>
+      <div class="tweet-grid">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/LeBause4200/status/2003730361839489344"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/mimounxzitoen/status/2008300583669674356"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/trishhxy/status/2044140758744387960"></a></blockquote>
+      </div>
+    </div>
+
+    <div class="tweet-group">
+      <div class="tweet-group-title">Particle Network — KOL Campaign</div>
+      <div class="tweet-grid">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/DamiDefi/status/1955233659201765739"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/stacy_muur/status/1952653053372600747"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/farmercist_eth/status/1904621485697663462"></a></blockquote>
+      </div>
+    </div>
+
+    <div class="tweet-group">
+      <div class="tweet-group-title">FOMO Ventures — Research Threads</div>
+      <div class="tweet-grid">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/FOMO_v/status/1854184805140664633"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Mikesi30/status/1934599724314640505"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Mikesi30/status/2055248992473169937"></a></blockquote>
+      </div>
+    </div>
+
+    <div class="tweet-group">
+      <div class="tweet-group-title">FOMO Ventures — KOL Campaign</div>
+      <div class="tweet-grid">
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Alaouicapital/status/2074890185297305850"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/Hydraze420/status/2065439286879482264"></a></blockquote>
+        <blockquote class="twitter-tweet" data-theme="dark"><a href="https://x.com/WhaleFactor/status/2079974225608323081"></a></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-head"><span class="section-num mono">05</span><h2>Let's connect</h2></div>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://calendly.com/vuongluan-ng25/catch-up-with-alain" target="_blank" rel="noopener">
+        <div class="contact-icon">📅</div>
+        <div>
+          <div class="contact-label">Calendly</div>
+          <div class="contact-value">Book a call</div>
+        </div>
+      </a>
+      <a class="contact-card" href="mailto:vuongluan.ng25@gmail.com">
+        <div class="contact-icon">📩</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">vuongluan.ng25@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://x.com/Alain_XOXO" target="_blank" rel="noopener">
+        <div class="contact-icon">𝕏</div>
+        <div>
+          <div class="contact-label">X (Twitter)</div>
+          <div class="contact-value">@Alain_XOXO</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/alainnguyeninweb3" target="_blank" rel="noopener">
+        <div class="contact-icon">in</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">alainnguyeninweb3</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Alain Nguyen · Dubai, UAE · <span id="year"></span>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</body>
+</html>
